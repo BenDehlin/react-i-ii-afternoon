@@ -1,50 +1,26 @@
-import React, {Component} from 'react'
-import '../App.css';
+import React from "react"
+import "../App.css"
 
-
-class Buttons extends Component{
-  constructor(){
-    super()
-    this.state = {}
-    // this.handlePrevious = this.handlePrevious.bind(this)
-    // this.handleNext = this.handleNext.bind(this)
-  }
-
-  handlePrevious(){
-    this.props.previous()
-  }
-  handleNext(){
-    this.props.next()
-  }
-  handleEdit(){
-    this.props.edit()
-  }
-  handleNew(){
-    this.props.new()
-  }
-
-  handleDelete(){
-    this.props.delete()
-  }
-
-  render(){
-    return(
-      <div className="Buttons">
-        <button className="button-arrow"
-        onClick={() => {this.handlePrevious()}}>&lt; Previous</button>
-        <div>
-        <button className="button-middle"
-        onClick={() => {this.handleEdit()}}>Edit</button>
-        <button className="button-middle"
-        onClick={() => {this.handleDelete()}}>Delete</button>
-        <button className="button-middle"
-        onClick={() => {this.handleNew()}}>New</button>
-        </div>
-        <button className="button-arrow"
-        onClick={() => {this.handleNext()}}>Next &gt;</button>
-      </div>
-    )
-  }
-}
+const Buttons = ({ previous, next, edit, add, remove }) => (
+  <div className="Buttons">
+    <button className="button-arrow" onClick={previous}>
+      &lt; Previous
+    </button>
+    <div>
+      <button className="button-middle" onClick={edit}>
+        Edit
+      </button>
+      <button className="button-middle" onClick={remove}>
+        Delete
+      </button>
+      <button className="button-middle" onClick={add}>
+        New
+      </button>
+    </div>
+    <button className="button-arrow" onClick={next}>
+      Next &gt;
+    </button>
+  </div>
+)
 
 export default Buttons
