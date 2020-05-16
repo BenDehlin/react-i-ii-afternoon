@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css'
 
-const Body = ({index, length, data}) => (
+const Card = ({index, length, data}) => (
   <div className='Body'>
     <div className='counter-container'>
       <p className='counter'>{index}/{length}</p>
@@ -19,4 +19,4 @@ const Body = ({index, length, data}) => (
   </div>
 )
 
-export default Body
+export default Card
