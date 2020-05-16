@@ -18,17 +18,12 @@ class App extends Component {
 
   handlePrevious = () => {
     let { currentValue, arr } = this.state
-    let lastIndex = arr.length - 1
-    if (currentValue === 0) currentValue = lastIndex
-    else currentValue--
-
+    currentValue === 0 ? currentValue = arr.length - 1 : currentValue--
     this.setState({ currentValue })
   }
   handleNext = () => {
     let { currentValue, arr } = this.state
-    let lastIndex = arr.length - 1
-    if (currentValue === lastIndex) currentValue = 0
-    else currentValue++
+    currentValue === arr.length - 1 ? currentValue = 0 : currentValue++
     this.setState({ currentValue })
   }
   handleEdit = () => {
